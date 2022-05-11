@@ -8,21 +8,17 @@ repos['CRAN'] <- 'https://cran.us.r-project.org'
 options(repos=repos, timeout=800)
 
 #install other packages
-install.packages(c(
-                   'sp',
+install.packages(c('sp',
                    'fields',
                    'viridisLite',
                    'stringr',
                    'assertthat',
                    'pracma',
-                   'inlabru',
                    'posterior',
                    'ggplot2',
-                   'maps',
-                   ),
-                 dependencies=TRUE
-)
+                   'maps'),
+                 dependencies=TRUE)
 
 #intall R-INLA
-install.packages("INLA",repos=c(getOption("repos"),
+install.packages(c("INLA","inlabru"), repos=c(getOption("repos"),
                  INLA="https://inla.r-inla-download.org/R/stable"), dep=TRUE)

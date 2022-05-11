@@ -13,12 +13,18 @@ all: update_submodules build_stan
 
 update_submodules:
 	git submodule update --init --remote --recursive
-	
-build_stan: 
-	cd cmdstan && $(MAKE) build
-	
+
 download_synds_files:
 	cd ngmm_tools && $(MAKE) download_rawfiles
 	cd ngmm_tools && $(MAKE) download_synds
+
+build_stan: 
+	cd cmdstan && $(MAKE) build
+
+build: 
+	docker build . -t $(TAG)
+
+run: build
+	docker run --rm -p 8888:8888 -v "$(PWD)":/home/jovyan/work $(TAG)
 
 clean:

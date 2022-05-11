@@ -4,16 +4,31 @@
 
 FROM jupyter/r-notebook:latest
 
+
 # Install system dependencies
+# ----------------------------
 USER root
+
 # ffmpeg for matplotlib anim & dvipng+cm-super for latex labels
 RUN apt-get update --yes && \
 	apt-get install --yes --no-install-recommends \
-        ffmpeg dvipng cm-super vim && \
+        ffmpeg dvipng cm-super vim g++ && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Install python and R dependencies
+# Intall other dependencies
+# ---------------------------
 USER ${NB_UID}
+
+# Install STAN
+# ---   ---   ---   ---   ---
+COPY --chown=${NB_UID} cmdstan "/home/${NB_USER}/cmdstan"
+RUN cd "/home/${NB_USER}/cmdstan" && \
+    make build && \
+    pwd
+ENV CMDSTAN "/home/${NB_USER}/cmdstan"
+
+# Install python and R dependencies
+# ---   ---   ---   ---   ---
 # Python dependencies:
 #   mamba:
 #     arviz, joblib, matplotlib, numpy
@@ -21,7 +36,6 @@ USER ${NB_UID}
 #     pystan<3
 #   pip:
 #     pystan, cmdstanpy
-
 RUN mamba install --quiet --yes \
         'arviz' \
         'joblib' \
