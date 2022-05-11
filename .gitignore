@@ -1,0 +1,6 @@
+# Submodules
+ngmm_tools/
+cmdstan/
+# R history
+.Rhistory
+
