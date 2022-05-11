@@ -9,7 +9,9 @@ FROM jupyter/r-notebook:latest
 # ----------------------------
 USER root
 
-# ffmpeg for matplotlib anim & dvipng+cm-super for latex labels
+# Intall ffmpeg for matplotlib anim, 
+# dvipng+cm-super for latex labels,
+# g++ to compile STAN, and
 RUN apt-get update --yes && \
 	apt-get install --yes --no-install-recommends \
         ffmpeg dvipng cm-super vim g++ && \
@@ -35,7 +37,7 @@ ENV CMDSTAN "/home/${NB_USER}/cmdstan"
 #     nest-asyncio, pandas, scipy
 #     pystan<3
 #   pip:
-#     pystan, cmdstanpy
+#     pystan, cmdstanpy, gdown
 RUN mamba install --quiet --yes \
         'arviz' \
         'joblib' \
@@ -51,7 +53,7 @@ RUN mamba install --quiet --yes \
         'r-rgdal' \
         && \
     mamba clean --all -f -y && \
-    pip install --no-cache-dir pystan cmdstanpy && \
+    pip install --no-cache-dir pystan cmdstanpy gdown && \
     fix-permissions "${CONDA_DIR}" && \
     fix-permissions "/home/${NB_USER}"
 
