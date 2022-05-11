@@ -1,0 +1,6 @@
+[submodule "ngmm_tools"]
+	path = ngmm_tools
+	url = git@github.com:NHR3-UCLA/ngmm_tools.git
+[submodule "cmdstan"]
+	path = cmdstan
+	url = git@github.com:stan-dev/cmdstan.git
