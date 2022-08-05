@@ -14,7 +14,7 @@ Instalation instructions:
  * Open a command-line terminal window and move to the directory you would like to install the tools <br> (e.g. ``cd /home/glavrent/Work/Research/``)
  * Clone current repository ``git clone https://github.com/NHR3-UCLA/docker-ngmm_tools.git``
  * Change directories to Docker NGMM Tools home directory ``cd docker-ngmm_tools``
- * Build Docker container with ``make build`` 
+ * Build Docker image and download the example dataset with ``make build``, or just build the Docker image with ``make build_lite`` 
  
 ## Running NGMM Tools:
 
@@ -31,8 +31,8 @@ Instalation instructions:
 
 ## Downloading Example Files, Synthetic Datasets, and Raw Data:
 
- * First, open a command-line terminal window and move to the  Docker NGMM Tools home directory <br> (e.g. ``cd /home/glavrent/Work/Research/docker-ngmm_tools``), then:
-   - run ``make download_synds_files`` to download example regression dataset, or
+ * First, open a command-line terminal window and move to the Docker NGMM Tools home directory <br> (e.g. ``cd /home/glavrent/Work/Research/docker-ngmm_tools``), then:
+   - run ``make download_examp_files`` to download example regression dataset, or
    - run ``make download_synds_files`` to download all synthetic datasets and raw metadata 
 
 Alternatively, the files can be downladed through the links the products section in https://www.risksciences.ucla.edu/nhr3/ngmm
