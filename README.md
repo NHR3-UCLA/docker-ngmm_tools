@@ -3,7 +3,7 @@
 This repository builds a Docker image of for the Non-Ergodic Methodology and Modeling tools in `NHR3-UCLA/ngmm_tools` 
 
 
-## Tools Instalation
+## Installing NGMM Tools:
 
 ### Command line Instalation
 The following instructions assume you have access to your computer's  command-line terminal window (e.g. PowerShell for Windows or Bash for Linux), and have installed Git and Docker. 
@@ -11,13 +11,28 @@ Information on installing Git can be found here (https://github.com/git-guides/i
 
 Instalation instructions:
 
- * Open command-line terminal window and move to the directory you would like to install the tools <br> (e.g. ``cd /home/glavrent/Work/Research/``)
+ * Open a command-line terminal window and move to the directory you would like to install the tools <br> (e.g. ``cd /home/glavrent/Work/Research/``)
  * Clone current repository ``git clone https://github.com/NHR3-UCLA/docker-ngmm_tools.git``
  * Change directories to Docker NGMM Tools home directory ``cd docker-ngmm_tools``
  * Build Docker container with ``make build`` 
  
 ## Running NGMM Tools:
 
-* Open command-line terminal window and move to the  Docker NGMM Tools home directory <br> (e.g. ``cd /home/glavrent/Work/Research/docker-ngmm_tools``)
-* Run Docker container ``make run``
-* Copy Jupyer URL, it looks like , and open it on your web browser
+* Open a command-line terminal window and move to the  Docker NGMM Tools home directory <br> (e.g. ``cd /home/glavrent/Work/Research/docker-ngmm_tools``)
+* Run ``make run``
+* Copy the Jupyer URL (it looks like: http://127.0.0.1:8888/lab?token=5214a...), and open it on your web browser
+
+## Updating NGMM Tools:
+
+ The `NHR3-UCLA/ngmm_tools` repository is continously updated with more efficient implementions of the existing non-ergodic tools and new tools that capture a greater portion of the systematic non-ergodic effects. To update the ``ngmm_tools`` submodule within this repository:
+ 
+* Open a command-line terminal window and move to the  Docker NGMM Tools home directory <br> (e.g. ``cd /home/glavrent/Work/Research/docker-ngmm_tools``)
+* Run ``make update_submodules``
+
+## Downloading Example Files, Synthetic Datasets, and Raw Data:
+
+ * First, open a command-line terminal window and move to the  Docker NGMM Tools home directory <br> (e.g. ``cd /home/glavrent/Work/Research/docker-ngmm_tools``), then:
+   - run ``make download_synds_files`` to download example regression dataset, or
+   - run ``make download_synds_files`` to download all synthetic datasets and raw metadata 
+
+Alternatively, the files can be downladed through the links the products section in https://www.risksciences.ucla.edu/nhr3/ngmm
