@@ -22,6 +22,8 @@ Instalation instructions:
 * Run ``make run``
 * Copy the Jupyer URL (it looks like: http://127.0.0.1:8888/lab?token=5214a...), and open it on your web browser
 
+The current directory is linked to the ``~\work`` directory in the virtual machine. Any regression datasets are located in ``~\work\ngmm_tools\Data``.
+
 ## Updating NGMM Tools:
 
  The `NHR3-UCLA/ngmm_tools` repository is continously updated with more efficient implementions of the existing non-ergodic tools and new tools that capture a greater portion of the systematic non-ergodic effects. To update the ``ngmm_tools`` submodule within this repository:
@@ -31,7 +33,8 @@ Instalation instructions:
 
 ## Downloading Example Files, Synthetic Datasets, and Raw Data:
 
- * First, open a command-line terminal window and move to the Docker NGMM Tools home directory <br> (e.g. ``cd /home/glavrent/Work/Research/docker-ngmm_tools``), then:
+ * First, run Docker container and select terminal in Jupyter Lab 
+ * change to work directory ``cd work``,  then:
    - run ``make download_examp_files`` to download example regression dataset, or
    - run ``make download_synds_files`` to download all synthetic datasets and raw metadata 
 
