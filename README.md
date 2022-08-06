@@ -7,7 +7,7 @@ This repository builds a Docker image of for the Non-Ergodic Methodology and Mod
 
 ### Command line Instalation
 The following instructions assume you have access to your computer's  command-line terminal window (e.g. PowerShell for Windows or Bash for Linux), and have installed Git and Docker. 
-Information on installing Git can be found here (https://github.com/git-guides/install-git). Information on installing Docker can be found here (https://docs.docker.com/get-docker)
+Information on installing Git can be found here (https://github.com/git-guides/install-git). Information on installing Docker can be found here (https://docs.docker.com/get-docker).
 
 Instalation instructions:
 

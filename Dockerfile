@@ -33,20 +33,22 @@ ENV CMDSTAN "/home/${NB_USER}/cmdstan"
 # ---   ---   ---   ---   ---
 # Python dependencies:
 #   mamba:
+#     ipywidgets
 #     arviz, joblib, matplotlib, numpy
-#     nest-asyncio, pandas, scipy
-#     pystan<3
+#     nest-asyncio, pandas, scipy, cartopy
+#     pystan
 #   pip:
 #     pystan, cmdstanpy, gdown
 RUN mamba install --quiet --yes \
+        'ipywidgets' \
         'arviz' \
         'joblib' \
         'matplotlib' \
         'numpy' \
         'nest-asyncio' \
         'pandas' \
-        'pystan<3' \
         'scipy' \
+        'cartopy' \
         'r-essentials' \
         'r-base<4.2' \
         'r-rgeos' \
