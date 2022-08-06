@@ -17,6 +17,7 @@ PWD=$(shell pwd)
 all: update_submodules build run
 
 update_submodules:
+	git submodule update --init --recursive
 	git submodule update --remote --merge
 
 download_synds_files:
@@ -31,7 +32,7 @@ build_stan: update_submodules
 
 build_lite: update_submodules
 	docker build . -t $(TAG)
-	
+
 build: build_lite download_examp_files
 
 run: build_lite
