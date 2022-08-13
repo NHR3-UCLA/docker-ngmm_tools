@@ -6,15 +6,15 @@ This repository builds a Docker image of for the Non-Ergodic Methodology and Mod
 ## Installing NGMM Tools:
 
 ### Command line Instalation
-The following instructions assume you have access to your computer's  command-line terminal window (e.g. PowerShell for Windows or Bash for Linux), and have installed Git and Docker. 
+The following instructions assume you have access to your computer's  command-line terminal window (e.g. PowerShell or MINIGW64 for Windows, or Bash for Linux), and have installed Git and Docker. 
 Information on installing Git can be found here (https://github.com/git-guides/install-git). Information on installing Docker can be found here (https://docs.docker.com/get-docker).
 
 Instalation instructions:
 
  * Open a command-line terminal window and move to the directory you would like to install the tools <br> (e.g. ``cd /home/glavrent/Work/Research/``)
- * Clone current repository ``git clone https://github.com/NHR3-UCLA/docker-ngmm_tools.git``
+ * Clone the current repository ``git clone https://github.com/NHR3-UCLA/docker-ngmm_tools.git``
  * Change directories to Docker NGMM Tools home directory ``cd docker-ngmm_tools``
- * Build Docker image and download the example dataset with ``make build``, or just build the Docker image with ``make build_lite`` 
+ * Build Docker image and download the example dataset with ``make build``, or just build the Docker image with ``make build_lite``; if ``make build`` fails, run ``make build_lite`` and follow instructions in [Downloading Example Files and Synthetic Datasets Section](#downloading-example-files-and-synthetic-datasets) for downloading the example dataset
  
 ## Running NGMM Tools:
 
@@ -31,7 +31,7 @@ The current directory is linked to the ``~\work`` directory in the virtual machi
 * Open a command-line terminal window and move to the  Docker NGMM Tools home directory <br> (e.g. ``cd /home/glavrent/Work/Research/docker-ngmm_tools``)
 * Run ``make update_submodules``
 
-## Downloading Example Files, Synthetic Datasets, and Raw Data:
+## Downloading Example Files and Synthetic Datasets:
 
  * First, run Docker container and select terminal in Jupyter Lab 
  * change to work directory ``cd work``,  then:
