@@ -20,10 +20,15 @@ PWD=$(shell pwd)
 all: update_submodules build run
 
 init_submodules:
-	git submodule update --init --recursive       
+	git submodule update --init --recursive
+	
+update_ngmmtools: init_submodules
+	git submodule update --remote --merge ngmm_tools
 
-update_submodules: init_submodules
-	git submodule update --remote --merge
+update_cmdstan: init_submodules
+	git submodule update --remote --merge cmdstan
+
+update_submodules: update_ngmmtools update_cmdstan
 
 download_synds_files:
 	cd ngmm_tools && $(MAKE) download_rawfiles
@@ -32,15 +37,15 @@ download_synds_files:
 download_examp_files:
 	cd ngmm_tools && $(MAKE) download_exampfiles
 
-build_stan: update_submodules
+build_stan: init_submodules
 	cd cmdstan && $(MAKE) build
 
 build_clean:
 	docker build . -t $(TAG)
 
-build_lite: update_submodules build_clean
+build_lite: init_submodules build_clean
 
-build_full: update_submodules build_clean download_examp_files
+build_full: init_submodules build_clean download_examp_files
 
 build: build_full
 
