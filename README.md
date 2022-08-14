@@ -5,18 +5,16 @@ This repository builds a Docker image of for the Non-Ergodic Methodology and Mod
 
 ## Installing NGMM Tools
 
-The NGMM Tools docker image can be either obtained from the [Docker Hub](https://hub.docker.com/r/nhr3webhub/ngmm-tools) or can be built using the source code in this repository. Both methods require the use of the command-line terminal. The [Docker Desktop](https://www.docker.com/products/docker-desktop/) is recommended for the users not comfortable with command line instructions, as it is easier to manage the Docker containers and images. Alternatively, the user can just install the [Docker Engine](https://docs.docker.com/engine/install/). For Windows users, it is recommended to use PowerShell, MINIGW64, Git Bash, or any other terminal window that uses the POSIX interface. The use of [Git](https://github.com/git-guides/install-git) is optional with the first method but it is required with the second method. 
+The NGMM Tools docker image can either be obtained from the [Docker Hub](https://hub.docker.com/r/nhr3webhub/ngmm-tools) or can be built using the source code in this repository. Both methods require the use of the command-line terminal. For Windows users, it is recommended to use PowerShell, MINIGW64, Git Bash, or any other terminal window that uses the POSIX interface. The [Docker Desktop](https://www.docker.com/products/docker-desktop/) is recommended for the users not comfortable with command line instructions, as it is easier to manage the Docker containers and images. Alternatively, the user can just install the [Docker Engine](https://docs.docker.com/engine/install/). The other software required in this installation is [Git](https://github.com/git-guides/install-git). It is a verison control software which is used in this project to download the ``ngmm-tools`` and `'cmdstan`` files from GitHub. For Windows users, when installing Git, for the question ``Which editor would you like Git to use?`` it is recommended to select ``Use Notepad as Git's default editor``, and for the question ``How would you like ot use Git form the command line?`` it is recommended to select ``Git form the command line and also from 3rd-party software``.
 
 ### Docker Hub Instalation
 
  * Start Docker, if not already running in the background
  * Open a command-line terminal window and move to the directory you would like to install the tools <br> (e.g. ``cd /home/glavrent/Work/Research/``)
- * Clone this repository, either through git (``git clone https://github.com/NHR3-UCLA/docker-ngmm_tools.git``), <br>or by clicking on **Code**, **Download Zip File** on this website and unziping it on the desired folder. 
- * On the terminal, change directories to the Docker NGMM Tools home directory ``cd docker-ngmm_tools``
- * Pull the image from the Docker Hub ``make pull``
- * To download the ngmm-tools functions, lunch Docker based on the [Running NGMM Tools](running_ngmmm_tools) instructions, open the terminal in Jupyter Lab, and run ``cd work && make update_ngmmtools``
-
-### Command line Instalation from GitHub
+ * Pull the image from the Docker Hub ``docker pull nhr3webhub/ngmm-tools``
+ * Clone the NGMM tools Docker repository and submoduels ``git clone https://github.com/NHR3-UCLA/docker-ngmm_tools.git --recursive``
+ 
+ ### Source Code Instalation from GitHub
 
  * Start Docker, if not already running in the background
  * Open a command-line terminal window and move to the directory you would like to install the tools <br> (e.g. ``cd /home/glavrent/Work/Research/``)
