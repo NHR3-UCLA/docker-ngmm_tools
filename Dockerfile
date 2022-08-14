@@ -12,6 +12,7 @@ USER root
 # Intall ffmpeg for matplotlib anim, 
 # dvipng+cm-super for latex labels,
 # g++ to compile STAN, and
+# vim for text edditing
 RUN apt-get update --yes && \
 	apt-get install --yes --no-install-recommends \
         ffmpeg dvipng cm-super vim g++ && \

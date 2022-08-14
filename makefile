@@ -20,7 +20,7 @@
 .PHONY = all clean build_stan
 .DEFAULT_GOAL := all
 
-TAG=nhr3webhub:ngmm-tools
+TAG=nhr3webhub/ngmm-tools
 PWD=$(shell pwd)
 
 all: update_submodules build run
@@ -58,9 +58,12 @@ build_lite: init_submodules build_clean
 
 build_full: init_submodules build_clean download_examp_files
 
-build: build_full
+build: build_lite
 
-run: build_clean
+pull:
+	docker pull $(TAG)
+
+run:
 	docker run --rm -p 8888:8888 -v "$(PWD)":/home/jovyan/work $(TAG)
 
 clean_docker_containers:
