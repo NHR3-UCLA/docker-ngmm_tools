@@ -1,4 +1,4 @@
-# Dockerfile for Non-ergodic Methodology and Modeling Tools
+# Docker Image for Non-ergodic Methodology and Modeling Tools
 
 This repository builds a Docker image of for the Non-Ergodic Methodology and Modeling tools in `NHR3-UCLA/ngmm_tools` 
 
